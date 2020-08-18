@@ -1,0 +1,36 @@
+<div class="album py-5 bg-light">
+    <div class="container">
+        <section class="jumbotron text-center bg-white shadow-sm">
+            <div class="container">
+                <h1>LAUNCHES</h1>
+                <p class="lead text-muted">
+                    This page shows all SpaceX launches, to go to a detailed description of each launch, click on
+                    "view".
+                </p>
+            </div>
+        </section>
+        <div class="row">
+            <div class="col-md-4" *ngFor="let launch of launches | paginate: { itemsPerPage: 9, currentPage: p}">
+                <div class="card mb-4 shadow-sm">
+                    <img *ngIf="launch.links.mission_patch" src="{{launch.links.mission_patch}}" alt="mission_patch"
+                        class="card-img-top p-2" width="100%" height="255">
+                    <img *ngIf="!launch.links.mission_patch" src="assets/img/No-Image-Available.png" alt="mission_patch"
+                        class="card-img-top p-2" width="100%" height="255">
+                    <div class="card-body">
+                        <h3 class="text-center launch-mission"><strong>{{launch.mission_name}}</strong></h3>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-primary"
+                                    [routerLink]="['/launch/' + launch.flight_number]">View</button>
+                            </div>
+                            <small class="text-muted">{{launch.launch_date_local | date}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer d-flex justify-content-center mb-5">
+            <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </div>
+</div>
