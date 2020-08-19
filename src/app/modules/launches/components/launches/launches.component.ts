@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GetlaunchesService } from '../../services/getlaunches.service';
+import { GetlaunchesService } from '../../../../services/getlaunches.service';
 
 @Component({
   selector: 'app-launches',

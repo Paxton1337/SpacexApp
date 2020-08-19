@@ -7,18 +7,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgProgressModule } from 'ngx-progressbar';
 import { MatSliderModule } from '@angular/material/slider';
-import { NgxPaginationModule } from 'ngx-pagination';
 import { NgScrollbarModule } from 'ngx-scrollbar';
 
 import { AppComponent } from './app.component';
-import { LaunchesComponent } from './components/launches/launches.component';
-import { LaunchComponent } from './components/launch/launch.component';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LaunchesComponent,
-    LaunchComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +26,6 @@ import { LaunchComponent } from './components/launch/launch.component';
     NgProgressModule.withConfig({
       spinner: false
     }),
-    NgxPaginationModule,
     NgScrollbarModule
   ],
   providers: [],
