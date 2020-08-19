@@ -11,11 +11,13 @@ import { NgScrollbarModule } from 'ngx-scrollbar';
 
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
+import { Page404Component } from './modules/page404/page404.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
+    Page404Component,
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,7 @@ import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { LayoutComponent } from './layout/layout.component';
+import { Page404Component } from './modules/page404/page404.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
       }
     ]
   },
+  {
+    path: '**',
+    component: Page404Component
+  }
 ];
 
 @NgModule({
