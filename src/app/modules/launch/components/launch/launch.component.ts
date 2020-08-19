@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { GetlaunchesService } from '../../services/getlaunches.service';
+import { GetlaunchesService } from '../../../../services/getlaunches.service';
 
 @Component({
   selector: 'app-launch',

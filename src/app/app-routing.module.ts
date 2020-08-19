@@ -1,22 +1,28 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LaunchesComponent } from './components/launches/launches.component';
-import { LaunchComponent } from './components/launch/launch.component';
+
+import { LayoutComponent } from './layout/layout.component';
 
 const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
-    redirectTo: '/launches'
+    component: LayoutComponent,
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: '/launches'
+      },
+      {
+        path: 'launches',
+        loadChildren: () => import('./modules/launches/launches.module').then(m => m.LaunchesModule)
+      },
+      {
+        path: 'launch/:id',
+        loadChildren: () => import('./modules/launch/launch.module').then(m => m.LaunchModule)
+      }
+    ]
   },
-  {
-    path: 'launches',
-    component: LaunchesComponent
-  },
-  {
-    path: 'launch/:id',
-    component: LaunchComponent
-  }
 ];
 
 @NgModule({
