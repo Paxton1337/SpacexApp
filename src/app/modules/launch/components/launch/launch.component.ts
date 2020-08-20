@@ -9,12 +9,15 @@ import { GetlaunchesService } from '../../../../services/getlaunches.service';
 })
 export class LaunchComponent implements OnInit {
   id: number = this.activateRouter.snapshot.params.id;
-  launch: any;
+  launch: any = {};
 
   constructor(private activateRouter: ActivatedRoute, private getLaunch: GetlaunchesService) { }
 
   ngOnInit(): void {
-    this.getLaunch.getCurrentLaunch(this.id).subscribe(launch => this.launch = launch);
+    this.getLaunch.getCurrentLaunch(this.id).subscribe(launch => {
+      console.log(launch);
+      return this.launch = launch;
+    });
   }
 
 }
