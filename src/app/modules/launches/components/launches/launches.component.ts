@@ -13,9 +13,6 @@ export class LaunchesComponent implements OnInit {
   constructor(private getLaunch: GetlaunchesService) { }
 
   ngOnInit(): void {
-    this.getLaunch.getAllLaunches().subscribe(launches => {
-      console.log(launches);
-      return this.launches = launches;
-    });
+    this.getLaunch.getAllLaunches().subscribe(launches => this.launches = launches);
   }
 }
