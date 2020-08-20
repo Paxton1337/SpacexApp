@@ -4,7 +4,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS, HttpErrorResponse } from '@angular
 
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ErrorInterceptor } from './services/error.interceptor';
+import { ErrorInterceptor } from './interceptors/error.interceptor';
 
 import { NgProgressModule } from 'ngx-progressbar';
 import { MatSliderModule } from '@angular/material/slider';

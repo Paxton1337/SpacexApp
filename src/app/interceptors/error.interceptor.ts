@@ -19,7 +19,7 @@ export class ErrorInterceptor implements HttpInterceptor {
     return next.handle(request).pipe(
       catchError((error: HttpErrorResponse) => {
         this.router.navigateByUrl('/404', { replaceUrl: true });
-        return throwError('');
+        return throwError(error);
       })
     );
   }
