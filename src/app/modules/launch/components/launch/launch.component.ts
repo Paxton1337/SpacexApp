@@ -14,10 +14,7 @@ export class LaunchComponent implements OnInit {
   constructor(private activateRouter: ActivatedRoute, private getLaunch: GetlaunchesService) { }
 
   ngOnInit(): void {
-    this.getLaunch.getCurrentLaunch(this.id).subscribe(launch => {
-      console.log(launch);
-      return this.launch = launch;
-    });
+    this.getLaunch.getCurrentLaunch(this.id).subscribe(launch => this.launch = launch);
   }
 
 }
