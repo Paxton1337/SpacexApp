@@ -1,12 +1,14 @@
 <div class="container">
-    <div class="card mt-5">
+    <div class="card my-5">
         <div class="card-header text-center">
-            <h1 class="mb-0">Mission: {{launch.mission_name}}</h1>
+            <h1 class="mb-0"><strong>Mission: {{launch.mission_name}}</strong></h1>
         </div>
-        <div class="card-body">
-            <div *ngIf="launch.links.flickr_images.length != 0" id="imageCarousel" class="carousel slide" data-ride="carousel">
+        <div class="card-body py-3">
+            <div *ngIf="launch.links?.flickr_images.length != 0" id="imageCarousel"
+                class="carousel slide pb-3 border-bottom" data-ride="carousel">
                 <div class="carousel-inner">
-                    <div *ngFor="let image of launch.links.flickr_images" class="carousel-item text-center" [class.active]="launch.links.flickr_images[0] == image">
+                    <div *ngFor="let image of launch.links?.flickr_images" class="carousel-item text-center"
+                        [class.active]="launch.links.flickr_images[0] == image">
                         <img [src]="image" alt="image" height="300" width="350">
                     </div>
                 </div>
@@ -19,7 +21,17 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-            <div class="row">Hello</div>
+            <div class="row pb-3 border-bottom" [class.pt-3]="launch.links?.flickr_images.length != 0">
+                <div class="col">Details about mission: "{{launch.details}}"</div>
+            </div>
+            <div class="row pt-3 d-flex flex-column">
+                <h2 class="text-center">Payload Map</h2>
+                <div class="col d-flex justify-content-center">
+                    <agm-map [latitude]="landPad.lat" [longitude]="landPad.lng">
+                        <agm-marker [latitude]="landPad.lat" [longitude]="landPad.lng"></agm-marker>
+                    </agm-map>
+                </div>
+            </div>
         </div>
         <div class="card-footer">Await</div>
     </div>

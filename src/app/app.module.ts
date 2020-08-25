@@ -29,7 +29,7 @@ import { Page404Component } from './modules/page404/page404.component';
     NgProgressModule.withConfig({
       spinner: false
     }),
-    NgScrollbarModule
+    NgScrollbarModule,
   ],
   providers: [
     {
