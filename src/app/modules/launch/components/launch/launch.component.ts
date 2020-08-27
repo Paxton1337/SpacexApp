@@ -18,7 +18,6 @@ export class LaunchComponent implements OnInit {
   launch: any = {};
   landPad: LandPad = {};
 
-  // tslint:disable-next-line:max-line-length
   constructor(
     private navCenter: NavigateCenterService,
     private routeAct: ActivatedRoute,
