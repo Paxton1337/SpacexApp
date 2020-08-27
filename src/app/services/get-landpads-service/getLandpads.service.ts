@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { of, Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { LandPads } from '../models/landPadsArray';
-import { LandPad } from '../models/landPad';
+import { LandPads } from '../../models/landPadsArray';
+import { LandPad } from '../../models/landPad';
 
 @Injectable({
   providedIn: 'root'

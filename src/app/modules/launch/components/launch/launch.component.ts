@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { GetlaunchesService } from '../../../../services/getlaunches.service';
-import { GetLandpadsService } from '../../../../services/getLandpads.service';
-import { NavigateCenterService } from '../../../../services/navigate-center.service';
+import { GetlaunchesService } from '../../../../services/get-launches-service/getlaunches.service';
+import { GetLandpadsService } from '../../../../services/get-landpads-service/getLandpads.service';
+import { NavigateCenterService } from '../../../../services/navigate-center-service/navigate-center.service';
 
 import { LandPad } from '../../../../models/landPad';
 import { switchMap } from 'rxjs/operators';
@@ -35,7 +35,7 @@ export class LaunchComponent implements OnInit {
   }
 
   centeredNav(num: number): void {
-    this.navCenter.navigate(num, this.id);
+    this.navCenter.navigateBetweenLaunch(num, this.id);
   }
 
 }
