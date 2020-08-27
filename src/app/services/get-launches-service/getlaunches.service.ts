@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ProgressBarService } from './progress-bar.service';
+import { ProgressBarService } from '../progressbar-service/progress-bar.service';
 import { of } from 'rxjs';
 import { switchMap, tap } from 'rxjs/operators';
 

@@ -57,9 +57,9 @@
         <div class="card-footer text-center py-4">
             <div class="row">
                 <div class="col d-flex justify-content-between">
-                    <button class="btn btn-outline-primary" (click)="centeredNav(2)">Previous launch</button>
+                    <button class="btn btn-outline-primary" [disabled]="launch.flight_number == 1" (click)="centeredNav(1)">Previous launch</button>
                     <button class="btn btn-outline-primary" [routerLink]="['']">All launches</button>
-                    <button class="btn btn-outline-primary" (click)="centeredNav(1)">Next launch</button>
+                    <button class="btn btn-outline-primary" [disabled]="launch.flight_number == 111" (click)="centeredNav(2)">Next launch</button>
                 </div>
             </div>
         </div>

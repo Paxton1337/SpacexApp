@@ -19,7 +19,7 @@ const routes: Routes = [
         loadChildren: () => import('./modules/launches/launches.module').then(m => m.LaunchesModule)
       },
       {
-        path: 'launch/:id',
+        path: 'launches/launch/:id',
         loadChildren: () => import('./modules/launch/launch.module').then(m => m.LaunchModule)
       }
     ]
