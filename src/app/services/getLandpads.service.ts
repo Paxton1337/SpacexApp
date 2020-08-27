@@ -12,8 +12,7 @@ export class GetLandpadsService {
   constructor() { }
 
   getLandPads(): Observable<LandPad> {
-    const randomNumber = Math.round(Math.random() * 4);
-    console.log(randomNumber);
-    return of(LandPads).pipe(switchMap(res => res.filter(pad => randomNumber === pad.id)));
+    const randomNumber = Math.round(Math.random() * 3);
+    return of(LandPads).pipe(switchMap(pads => pads.filter(pad => randomNumber === pad.id)));
   }
 }
